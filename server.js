@@ -1,6 +1,10 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+const port = process.env.PORT || 3000;
+
+
+
 
 var app = express();
 
@@ -84,7 +88,7 @@ app.get('/bad', (req, res) => {
 
 
 
-var server = app.listen(3000, () => {
+var server = app.listen(port, () => {
     //console.log(server.address());
 
     var host = server.address().address;
@@ -93,7 +97,7 @@ var server = app.listen(3000, () => {
     console.log('Server is UP and RUNNING');
     console.log('HOST:', host);
     console.log('FAMILY:', family);
-    console.log('PORT:', port);
+    console.log('PORT:', `${port}`);
 
 
 });
